@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* *{
+    box-sizing: border-box;
+} */
+
+:root{    
+    --Light-red: hsl(356, 100%, 69%);
+    --Very-light-red: hsl(355, 100%, 74%);
+    --Very-dark-blue: hsl(208, 49%, 24%);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%); 
+    --Grayish-blue: hsl(240, 2%, 50%);
+    --Very-dark-grayish-blue: hsl(207, 13%, 34%);
+    --Very-dark-black-blue: hsl(240, 10%, 16%);
+
+    /* ### Gradient */
+
+    /* Background gradient - Intro/CTA mobile nav: */
+
+    --Very-light-red: hsl(13, 100%, 72%);
+    --Light-red: hsl(353, 100%, 62%);
+
+    /* Background gradient - body: */
+
+    --Very-dark-gray-blue: hsl(237, 17%, 21%);
+    --Very-dark-desaturated: hsl(237, 23%, 32%);
+
+    /* Border-radius */
+
+    --radius: 5cm;
+
+    /* Padding */
+
+    --padding-hor:12vh;
+    --padding-ver:10%;
+
+    /* Font Size */
+
+    --h2-size:1.8rem;
+    --p-size:1.2rem;
+
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Overpass';
+    font-weight: bold;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.container-top{
+    min-height: 70vh;
+    padding: var(--padding-ver) var(--padding-ver);
+    text-align: center;
+    border-radius:0 0 0 10rem;
+    position: relative;
+    color: white;
+    background: url(images/bg-pattern-intro.svg);
+    background-position: center;
+    background-size: 150%;
+    background-color: var(--Light-red);
+    z-index: 99;
+
+}
+
+
+.container-top h1, .container-top p{
+    position: relative;
+    top: 40px;
+    z-index: 99;
+}
+
+
+header{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 0 100px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color:transparent;
+    color: white;
+    z-index: 100;
+    font-family: 'Ubuntu';
+}
+
+header .logo{
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2rem;
+    float: left;
+    font-family: 'Ubuntu';
+}
+
+header nav{
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul hr{
+    display: none;
+    width: 70%;
+}
+
+header nav ul li ul{
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    display: none;
+}
+
+header nav ul li.active ul{
+    display: block;
+    position: relative;
+    padding-left: 0;
+}
+
+header nav ul li.active ul li{
+    text-align: center;
+}
+
+header nav ul li.active.sub-menu i{
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+@media screen and (min-width:980px) {
+    .sub-menu{
+        position: relative;
+        right: 6vw;
+    }
+
+}
+
+
+header nav ul li ul li{
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    z-index: 100;
+
+}
+
+header nav ul li a{
+    height: 50px;
+    padding: 20px 40px;
+    line-height: 50px;
+    text-decoration: none;
+    color:#fff;
+
+}
+
+header nav ul li ul li a{
+    color: rgba(0,0,0,0.5);
+}
+
+header nav ul li ul li a:hover{
+    color: rgba(0,0,0,0.8);
+}
+
+.menu-toggle{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none ;
+}
+
+.top-content{
+    margin: 5rem auto;
+}
+
+
+.cta-middle{
+    padding: 20px 50px;
+    border: solid 1px white;
+    border-radius: var(--radius) ;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold ;
+    cursor: pointer;
+    position: relative;
+    top: 80px;
+    z-index: 99;
+}
+
+.cta-white{
+    background-color: white;
+    color: var(--Light-red);
+    border-radius: var(--radius);
+}
+
+    .cta-white:hover{
+        background-color: rgba(255,255,255,0.5);
+        border-color: rgba(255,255,255,0.5);
+        color: white;
+    }
+
+.cta-transparent:hover{
+    background-color: white;
+    color: var(--Light-red);
+    border-radius: var(--radius);
+}
+
+.cta-2{
+    margin: 50px auto;
+}
+
+/* Middle Container */
+
+.container-middle{
+    background: white;
+    position: relative;
+    top: -100px;
+    text-align: center;
+    padding: var(--padding-ver) 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-middle h1{
+    margin: 20px auto;
+    color: var(--Very-dark-blue);
+    font-size: 3rem;
+}
+
+.description{
+    padding-left: var(--padding-hor);
+    background-color: white;
+    position: relative;
+}
+
+.description-wrapper{
+    display: flex;
+}
+
+.description-wrapper .description-left-column{
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content{
+    text-align: left;
+    width: 40ch;
+}
+
+    .card-content h2{
+        font-size: var(--h2-size);
+        color: hsl(208, 49%, 24%);
+        margin-bottom: 1.5rem;
+        font-family: 'Overpass', sans-serif;
+        font-weight: 700;
+    }
+
+    .card-content aside{
+        text-align: left;
+        font-size: var(--p-size);
+        margin-bottom: 3rem;
+        font-family: 'Overpass', sans-serif;
+        font-weight: 300;
+        color: var(--Very-dark-desaturated);
+    }
+
+.description-wrapper .description-right-column{
+    flex-basis: 30%;
+}
+
+.description-right-column img{
+    position: relative;
+}
+
+.mobile-editor{
+    display: none;
+}
+
+
+/* Infrastructure Section */
+
+.infrastructure{
+    background: url(images/bg-pattern-circles.svg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-color: var(--Very-dark-gray-blue);
+    border-radius: 0 5em 0 5em;
+    height: 430px;
+    width: 100%;
+    position: relative;
+}
+
+.infrastructure-wrapper{
+    display: flex;
+    position:absolute ;
+    top: -14%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.infrastructure-wrapper .infrastructure-right-column{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infrastructure-wrapper h2{
+    color: white;
+    font-size: 2.3rem;
+}
+
+.infrastructure-wrapper aside{
+    color: hsl(0, 0%, 80%);
+}
+
+
+/* Pricing? Section */
+
+.benefits{
+    padding-right: var(--padding-hor);
+    background-color: white;
+    /* position: relative; */
+    margin:auto;
+}
+
+.mobile-laptop{
+    display: none;
+}
+
+.benefits-wrapper{
+    display: flex;
+    position: absolute;
+    left: -20vw;
+    margin: auto;
+}
+
+.benefits-right-column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Footer */
+
+footer{
+    /* height: 70; */
+    padding:var(--padding-ver) var(--padding-hor) ;
+    background-color: var(--Very-dark-black-blue);
+    border-radius: 0 5rem 0 5rem;
+    position: relative;
+    top: 500px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .footer-logo{
+    display: flex;
+    flex-direction: column ;
+    justify-content: start;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Ubuntu';
+    color: white;
+}
+
+
+
+.footer-columns ul li{
+    list-style: none;
+    margin: 15px;
+}
+
+.footer-columns ul li:first-child{
+    margin-bottom: 25px;
+}
+
+.footer-columns h3, .footer-columns a{
+    color: white;
+}
+
+.footer-columns a{
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: hsl(240, 2%, 79%);
+    text-decoration: none;
+}
+
+    .footer-columns a:hover{
+        text-decoration: underline;
+    }
+
+.footer-columns ul{
+    padding: 0;
+}
+
+@media screen and (max-width:990px){
+    header{
+        padding: 0 20vw;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    header nav{
+        /* display: none; */
+        margin: 30px auto;
+        position: absolute;
+        left:50% ;
+        width: 50vw;
+        transform: translateX(-50%);
+        background: #fff;
+        border-radius: 10px;
+        top: -2000%;
+        transition: ease 0.5s;
+    }
+
+    header nav.responsive-nav{
+        /* display: block; */
+        top: 50px;
+    }
+
+    header nav ul{
+        display: block;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    header nav ul hr{
+        display: block;
+    }
+
+    header nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li.li-cta{
+        padding: 5px auto;
+    }
+
+    header nav ul li.sub-menu ul{
+        background-color: rgb(230, 226, 226);
+        width: 80%;
+        margin: auto;
+    }
+
+    header nav ul li a, li.sub-menu a{
+        color: rgba(0,0,0,0.5);
+    }
+
+    header nav ul li a:hover, li.sub-menu a:hover{
+        color: rgba(0,0,0,0.8);
+    }
+
+    header nav ul li .cta-white{
+        padding: 0;
+        width: 50%;
+        margin: 0 auto;
+        background: linear-gradient(90deg, var(--Very-light-red),var(--Light-red));
+        color: white;
+        text-align: center;
+    }
+
+    .conatainer-top .cta-2 .cta-middle{
+        display: none;
+        padding: 20px 20px;
+        width: 50px;
+    }
+
+    header nav ul li:last-child{
+        display: flex; 
+        flex-direction: column;
+    }
+
+    header nav ul li.sub-menu ul li{
+        display: block;
+    }
+
+
+    /* Middle Container */
+
+    .card-content{
+        margin: auto;
+    }
+
+    .card-content :is(aside, h2){
+        text-align: center;
+    }
+
+    .container-middle h1{
+        font-size: 2rem;
+    }
+
+    .description{
+        padding: 0;
+        margin-bottom: 10rem;
+    }
+
+    .description-wrapper .mobile-editor{
+        display: block;
+        margin: auto;
+    }
+
+    .description-wrapper .desktop-editor{
+        display: none;
+    }
+
+    .description-wrapper{
+        flex-direction: column;
+    }
+
+    .infrastructure{
+        height: 600px;
+        background:none;
+        background-color: var(--Very-dark-gray-blue);
+    }
+
+    .infrastructure-wrapper{
+        flex-direction: column;
+    }
+
+    .infrastructure-left-column img{
+        width: 375px;
+    }
+
+    .infrastructure-right-column .card-content{
+        align-items: center;
+    }
+
+    .desktop-laptop{
+        display: none;
+    }
+
+    .mobile-laptop{
+        display: block;
+    }
+    .benefits-wrapper{
+        flex-direction: column;
+        padding: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+    }
+
+
+    footer{
+        height: 140vh;
+        top: 800px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-columns{
+        text-align: center;
+    }
+
+    .footer-columns.footer-logo{
+        margin: auto;
+    }
+
+
+}
